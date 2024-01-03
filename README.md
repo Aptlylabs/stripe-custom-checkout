@@ -54,7 +54,7 @@ npm install
 cd client
 
 #### Create a .env file and add your Stripe public key
-STRIPE_PUBLISHABLE_KEY=your-stripe-public-key,
+- STRIPE_PUBLISHABLE_KEY=your-stripe-public-key,
 
 #### Add your priceId created from stripe
 - STRIPE_MONTHLY_STARTER_PLAN_ID=your-starter-priceId
