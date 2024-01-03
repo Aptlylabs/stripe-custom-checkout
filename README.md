@@ -57,8 +57,8 @@ cd client
 STRIPE_PUBLISHABLE_KEY=your-stripe-public-key,
 
 #### Add your priceId created from stripe
-STRIPE_MONTHLY_STARTER_PLAN_ID=your-starter-priceId
-STRIPE_MONTHLY_PREMIUM_PLAN_ID=your-premium-priceId
+- STRIPE_MONTHLY_STARTER_PLAN_ID=your-starter-priceId
+- STRIPE_MONTHLY_PREMIUM_PLAN_ID=your-premium-priceId
 
 ### Backend Configuration
 
@@ -66,8 +66,8 @@ STRIPE_MONTHLY_PREMIUM_PLAN_ID=your-premium-priceId
 cd server
 
 #### Create a .env file and add your Stripe and Webhook secret key
-STRIPE_SECRET_KEY=your-stripe-secret-key
-WEB_HOOK_SECRET_KEY=your-stripe-secret-key
+- STRIPE_SECRET_KEY=your-stripe-secret-key
+- WEB_HOOK_SECRET_KEY=your-stripe-secret-key
 ## Folder Structure
 ```
 stripe-project/
