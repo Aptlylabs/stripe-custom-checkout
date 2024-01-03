@@ -5,6 +5,9 @@ import {
   STRIPE_MONTHLY_STARTER_PLAN_ID,
 } from "./utils/constants";
 import { useNavigate } from "react-router-dom";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
+import { useState } from "react";
 
 // ----------------------------------------------------------------------
 
@@ -37,6 +40,8 @@ export enum SubscriptionStatus {
 export default function PricingPlanCard({ card, index, sx, ...other }: Props) {
   const navigate = useNavigate();
   const { subscription, price, caption, lists } = card;
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
 
   const handleCreateSubscription = async (subscription: string) => {
     try {
@@ -48,20 +53,36 @@ export default function PricingPlanCard({ card, index, sx, ...other }: Props) {
         email: "test@gmail.com",
       });
 
-      console.log(response, "resp");
-
       navigate("/checkout", {
         state: {
           paymentClientSecret: response.data.clientSecret as string,
         },
       });
     } catch (error) {
+      setSnackbarMessage(
+        "Make sure to add your stripe publishable key,secret key and webhook secret key to test the code"
+      );
+      setSnackbarOpen(true);
       console.error(error, "@error::Index::create-subscription");
     }
   };
 
   return (
     <>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={5000} // Adjust as needed
+        onClose={() => setSnackbarOpen(false)}
+      >
+        <MuiAlert
+          elevation={6}
+          variant="filled"
+          onClose={() => setSnackbarOpen(false)}
+          severity="warning"
+        >
+          {snackbarMessage}
+        </MuiAlert>
+      </Snackbar>
       <Card
         sx={{
           p: 5,

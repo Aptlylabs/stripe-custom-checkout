@@ -36,7 +36,7 @@ const StripeWebhook = async (req: any, res: Response, next: NextFunction) => {
 
   try {
     if (eventType === "payment_intent.succeeded") {
-      console.log(data, "data");
+      //add your code for further steps to be done once the payment is confirmed
     }
   } catch (error) {
     next(error);
