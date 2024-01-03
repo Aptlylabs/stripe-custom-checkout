@@ -22,7 +22,7 @@ This code will explain how to use Stripe to create a custom subscription checkou
 
 ## Project Overview
 
-A custom checkout flow tailored to our platform's needs. Instead of redirecting users to a separate Stripe checkout page, we can implement a seamless and branded experience within our application. This ensures a consistent look and feel for users throughout the entire purchasing process.
+A stripe custom checkout flow tailored to our platform's needs. Instead of redirecting users to a separate Stripe checkout page, we can implement a seamless and branded experience within our application. This ensures a consistent look and feel for users throughout the entire purchasing process.
 
 Key aspects of the Stripe custom checkout flow include:
 
