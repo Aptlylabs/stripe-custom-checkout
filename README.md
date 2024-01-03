@@ -33,7 +33,7 @@ Key aspects of the Stripe custom checkout flow include:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/your-project.git
+git clone git@github.com:Aptlylabs/stripe-custom-checkout.git
 
 # Navigate to the project directory
 cd stripe-project
